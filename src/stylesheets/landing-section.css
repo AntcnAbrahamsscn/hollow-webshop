@@ -1,0 +1,26 @@
+#landingPage {
+    min-height: 97vh;
+}
+.parallax-bg {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-image: url("../assets/backgrounds/vertical-5-boards.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Small tablets styles */
+@media screen and (min-width: 620px) {
+}
+
+/* Large tablets and laptop styles */
+@media screen and (min-width: 960px) {
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+}

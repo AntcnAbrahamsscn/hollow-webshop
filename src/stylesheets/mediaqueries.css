@@ -1,0 +1,17 @@
+/* Small tablets styles */
+@media screen and (min-width: 620px) {
+}
+
+/* Large tablets and laptop styles */
+@media screen and (min-width: 960px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+}

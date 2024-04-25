@@ -1,25 +1,33 @@
-import { Outlet } from "react-router-dom"
-import React from 'react';
+import { Link, Outlet } from "react-router-dom";
+import React from "react";
 
 
 
 const Root = () => {
-    
+    return (
+        <div >
+            <main >
+                <Outlet />
+            </main>
+            <footer
+                style={{
+                    display: "flex",
+                    gap: "1em",
+                    justifyContent: "center",
+                }}
+            >
+                <Link to="/" className="nav-link-style">
+                    <p>Firstpage </p>
+                </Link>
+                <Link to="/Admin" className="nav-link-style">
+                    <p>Admin </p>
+                </Link>
+                <Link to="/Login" className="nav-link-style">
+                    <p>Login </p>
+                </Link>
+            </footer>
+        </div>
+    );
+};
 
-	return (
-	<div>
-		<header>
-			<nav>
-				<ul></ul>
-			</nav>
-		</header>
-		<main>
-		<Outlet/>
-		</main>
-		<footer>
-		</footer>
-	</div>
-	);
-}
-
-export default Root
+export default Root;

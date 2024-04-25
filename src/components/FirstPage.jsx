@@ -1,39 +1,29 @@
-import React, { useState } from "react";
-import { getKites } from "../data/crud";
-// CSS
-import "../stylesheets/FirstPage.css";
-
-// Imgs
-import FirstPageBg from "../assets/backgrounds/hollow-kite.png";
+import React, { useEffect } from "react";
+import "../stylesheets/first-page.css";
+import LandingSection from "./LandingSection";
+import ShopSection from "./ShopSection";
 
 export default function FirstPage() {
-    const [kites, setKites] = useState([]);
 
-    const handleClick = async () => {
-        const kitesData = await getKites();
-        setKites(kitesData);
-        console.log("Data from FS: " + kitesData);
-    };
+    useEffect(() => {
+        const parallaxEffect = () => {
+            const parallaxBg = document.querySelector(".parallax-bg");
+            const scrolled = window.scrollY;
+            const speed = scrolled * 0.3;
+            parallaxBg.style.transform = `translate3d(0, ${-speed}px, 0)`;
+        };
+
+        window.addEventListener("scroll", parallaxEffect);
+
+        return () => {
+            window.removeEventListener("scroll", parallaxEffect);
+        };
+    }, []);
 
     return (
-        <div
-            className="first-page"
-            style={{
-                backgroundImage: `url(${FirstPageBg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "-400px", 
-              }}
-        >
-            <h1>FirstPage</h1>
-            <button onClick={handleClick}>Funkar det??</button>
-            <ul>
-                {kites.map((kite) => (
-                    <li key={kite.key}>
-                        <p>Name: {kite.name}</p>
-                        <p>Price: {kite.price}</p>
-                    </li>
-                ))}
-            </ul>
+        <div className="mainPage">
+            <LandingSection />
+            <ShopSection />
         </div>
     );
 }

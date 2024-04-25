@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Small tablets styles */
+@media screen and (min-width: 620px) {
+}
+
+/* Large tablets and laptop styles */
+@media screen and (min-width: 960px) {
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+}

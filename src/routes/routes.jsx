@@ -3,6 +3,7 @@ import Root from "./Root.jsx";
 import FirstPage from '../components/FirstPage.jsx';
 import AdminPage from '../components/AdminPage.jsx';
 import LoginPage from '../components/LoginPage.jsx';
+import  "../stylesheets/mediaqueries.css"
 
 const router = createHashRouter([
     {
