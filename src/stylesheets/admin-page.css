@@ -1,5 +1,10 @@
 #admin {
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    background-color: var(--secondary-text-color);
+}
+
+.adminLanding {
+    min-height: 97vh;
 }
 
 /* Small tablets styles */
@@ -25,8 +30,7 @@
     body {
         font-size: 20px;
     }
-
     #admin {
-        padding: 0 200px;
+        padding: 60px 200px;
     }
 }

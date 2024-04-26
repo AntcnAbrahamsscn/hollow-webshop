@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../assets/logotypes/logotype.svg";
+import { Link } from "react-router-dom";
+
 import "../stylesheets/admin-header.css"
 
 
@@ -7,7 +9,9 @@ export default function AdminHeader() {
     return (
         <nav>
             <img src={logo} />
-            <i class="fa-solid fa-right-from-bracket"></i>
+            <Link to="/"><i className="fa-solid fa-right-from-bracket"></i></Link> 
+            
+          
         </nav>
     );
 }

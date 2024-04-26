@@ -1,6 +1,20 @@
-import React from "react";
+import React, {  useState } from "react";
+import { useStore } from "../data/store.js";
+import {  getKites, deleteKite } from "../data/crud.js";
 
 export default function ItemContainer({ kite, showButtons }) {
+    const [isLoading, setIsLoading] = useState(false)
+    const setKites = useStore((state) => state.setKites);
+
+
+
+    const handleDelete = async () => {
+		setIsLoading(true)
+		await deleteKite(kite.key)
+		const kitesFromDb = await getKites()
+		setKites(kitesFromDb)
+		setIsLoading(false)
+	}
 
     return (
         <div key={kite.key} className="itemContainer">
@@ -10,7 +24,7 @@ export default function ItemContainer({ kite, showButtons }) {
             {showButtons && (
                 <div>
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button disabled={isLoading} onClick={handleDelete}>Delete</button>
                 </div>
             )}
         </div>

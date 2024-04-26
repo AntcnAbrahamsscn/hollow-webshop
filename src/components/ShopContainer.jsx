@@ -4,7 +4,7 @@ import { useStore } from "../data/store";
 import { getKites } from "../data/crud";
 import "../stylesheets/shop-container.css";
 
-export default function ShopContainer({showButtons}) {
+export default function ShopContainer({ showButtons }) {
     const { kites, setKites } = useStore();
 
     useEffect(() => {
@@ -13,15 +13,16 @@ export default function ShopContainer({showButtons}) {
             setKites(kitesData);
         };
         fetchData();
-    }, []); 
+    }, []);
 
     return (
         <div className="shopContainer">
-            <div className="buttonContainer">
-                <button>Add item</button>
-            </div>
             {kites.map((kite) => (
-                <ItemContainer key={kite.key} kite={kite} showButtons={showButtons} />
+                <ItemContainer
+                    key={kite.key}
+                    kite={kite}
+                    showButtons={showButtons}
+                />
             ))}
         </div>
     );

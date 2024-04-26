@@ -7,20 +7,7 @@ export default function FirstPage() {
     const [showButtons, setShowButtons] = useState(false);
 
 
-    useEffect(() => {
-        const parallaxEffect = () => {
-            const parallaxBg = document.querySelector(".parallax-bg");
-            const scrolled = window.scrollY;
-            const speed = scrolled * 0.3;
-            parallaxBg.style.transform = `translate3d(0, ${-speed}px, 0)`;
-        };
-
-        window.addEventListener("scroll", parallaxEffect);
-
-        return () => {
-            window.removeEventListener("scroll", parallaxEffect);
-        };
-    }, []);
+    
 
     return (
         <div className="mainPage">
