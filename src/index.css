@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: var(--color-background);
+    background-color: var(--secondary-text-color);
     margin: 0 auto;
 }
 
