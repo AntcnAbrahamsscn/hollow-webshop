@@ -9,14 +9,22 @@
     background-color: var(--secondary-text-color);
 }
 
+.formDivider {
+    grid-column: span 1;
+    width: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    /* opacity: 0.2; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 .inputColumn {
     display: flex;
     flex-direction: column;
 }
 
 .inputContainer {
-    grid-column: span 6;
-    width: 90%;
+    grid-column: span 5;
+    width: 100%;
 }
 
 #itemPreview {

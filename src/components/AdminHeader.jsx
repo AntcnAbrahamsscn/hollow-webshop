@@ -7,7 +7,7 @@ import "../stylesheets/admin-header.css"
 
 export default function AdminHeader() {
     return (
-        <nav>
+        <nav className="adminNav">
             <img src={logo} />
             <Link to="/"><i className="fa-solid fa-right-from-bracket"></i></Link> 
             

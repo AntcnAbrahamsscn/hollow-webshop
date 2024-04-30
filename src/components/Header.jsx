@@ -1,8 +1,13 @@
 import React from "react";
 import logo from "../assets/logotypes/logotype.svg";
 import "../stylesheets/header.css";
+import { useStore } from "../data/store.js"; 
+
 
 export default function Header() {
+    const isHamburgerOpen = useStore((state) => state.isHamburgerOpen);
+    const toggleHamburger = useStore((state) => state.toggleHamburger);
+
     return (
         <nav className="firstPageNav">
             <img src={logo} alt="" />
@@ -23,7 +28,7 @@ export default function Header() {
                     </a>
                 </li>
             </ul>
-            <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div>
+           <button onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></button>
         </nav>
     );
 }

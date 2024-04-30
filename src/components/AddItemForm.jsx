@@ -8,6 +8,7 @@ export default function EditForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("")
     const [img, setImg] = useState(standardImg);
     const setKites = useStore((state) => state.setKites);
 
@@ -21,13 +22,14 @@ export default function EditForm() {
 
         setIsLoading(true);
 
-        const newKite = { name: name, price: price, img: img };
+        const newKite = { name: name, price: price, img: img, description:description };
 
         try {
             await addKite(newKite);
             setName("");
             setPrice("");
             setImg("");
+            setDescription("")
 
             setKites(await getKites());
         } catch (error) {
@@ -47,6 +49,15 @@ export default function EditForm() {
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div className="inputColumn">
+                    <label>Description</label>
+                    <input
+                        type="text"
+                        maxLength="30"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
                 <div className="inputColumn">
@@ -72,17 +83,16 @@ export default function EditForm() {
                     {isLoading ? "Loading..." : "Add"}
                 </button>
             </div>
-            <div id="itemPreview">
-                <h3>Your item</h3>
-                <div className="itemContainer">
-                    {img ? (
-                        <img src={img} alt={name} />
-                    ) : (
-                        <img src={standardImg} alt="Test Image" />
-                    )}
-                    {name ? <p>{name}</p> : <p>Title</p>}
-                    {price ? <p>{price}</p> : <p>Price</p>}
-                </div>
+            <div className="formDivider"></div>
+            <div className="itemContainer">
+                {img ? (
+                    <img src={img} alt={name} />
+                ) : (
+                    <img src={standardImg} alt="Test Image" />
+                )}
+                {name ? <p>{name}</p> : <p>Title</p>}
+                {description ? <p>{description}</p> : <p>Description</p>}
+                {price ? <p>{price} </p> : <p>Price</p>}
             </div>
         </form>
     );

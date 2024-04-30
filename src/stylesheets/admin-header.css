@@ -1,4 +1,4 @@
-nav {
+.adminNav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,7 +9,7 @@ nav {
     z-index: 1;
 }
 
-nav img {
+.adminNav img {
     max-width: 150px;
 }
 
