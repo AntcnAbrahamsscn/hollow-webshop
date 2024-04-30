@@ -17,18 +17,18 @@ export default function Header() {
                         <i className="fa-solid fa-lines-leaning navIcon"></i>Kites
                     </a>
                 </li>
-                <li>
+                {/* <li>
                     <a href="">
                         <i className="fa-solid fa-address-card navIcon"></i>About us
                     </a>
-                </li>
+                </li> */}
                 <li>
                     <a href="">
                         <i className="fa-solid fa-cart-shopping navIcon"></i>Cart
                     </a>
                 </li>
             </ul>
-           <button onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></button>
+           <div onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></div>
         </nav>
     );
 }

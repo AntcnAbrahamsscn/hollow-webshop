@@ -8,7 +8,7 @@ export default function EditForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("")
+    const [description, setDescription] = useState("");
     const [img, setImg] = useState(standardImg);
     const setKites = useStore((state) => state.setKites);
 
@@ -22,14 +22,19 @@ export default function EditForm() {
 
         setIsLoading(true);
 
-        const newKite = { name: name, price: price, img: img, description:description };
+        const newKite = {
+            name: name,
+            price: price,
+            img: img,
+            description: description,
+        };
 
         try {
             await addKite(newKite);
             setName("");
             setPrice("");
             setImg("");
-            setDescription("")
+            setDescription("");
 
             setKites(await getKites());
         } catch (error) {
@@ -49,13 +54,14 @@ export default function EditForm() {
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="inputColumn">
                     <label>Description</label>
                     <input
                         type="text"
-                        maxLength="30"
+                        maxLength="100"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
@@ -64,8 +70,10 @@ export default function EditForm() {
                     <label>Price of the product</label>
                     <input
                         type="text"
+                        pattern="[0-9]*"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="inputColumn">
@@ -76,23 +84,26 @@ export default function EditForm() {
                         type="text"
                         value={img}
                         onChange={(e) => setImg(e.target.value)}
+                        required
                     />
                     <p>Test img: src\assets\kites\test-img.png</p>
                 </div>
                 <button disabled={isLoading} type="submit">
-                    {isLoading ? "Loading..." : "Add"}
+                    {isLoading ? "Loading..." : "Add item to list"}
                 </button>
             </div>
             <div className="formDivider"></div>
-            <div className="itemContainer">
-                {img ? (
-                    <img src={img} alt={name} />
-                ) : (
-                    <img src={standardImg} alt="Test Image" />
-                )}
-                {name ? <p>{name}</p> : <p>Title</p>}
-                {description ? <p>{description}</p> : <p>Description</p>}
-                {price ? <p>{price} </p> : <p>Price</p>}
+            <div  id="itemPreview">
+                <div className="itemContainer">
+                    {img ? (
+                        <img src={img} alt={name} />
+                    ) : (
+                        <img src={standardImg} alt="Test Image" />
+                    )}
+                    {name ? <p>{name}</p> : <p>Title</p>}
+                    {description ? <p>{description}</p> : <p>Description</p>}
+                    {price ? <p>{price} £ </p> : <p>Price</p>}
+                </div>
             </div>
         </form>
     );

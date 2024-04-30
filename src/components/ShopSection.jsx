@@ -1,16 +1,14 @@
 import React from "react";
 import "../stylesheets/shop-section.css";
-import FilterContainer from "./FilterContainer";
 import ShopContainer from "./ShopContainer";
 
-export default function ShopSection({showButtons}) {
+export default function ShopSection({showButtons, showAdd}) {
     
   
 
     return (
         <section id="shop">
-            <FilterContainer />
-            <ShopContainer showButtons={showButtons}/>
+            <ShopContainer showButtons={showButtons} showAdd={showAdd}/>
         </section>
     );
 }

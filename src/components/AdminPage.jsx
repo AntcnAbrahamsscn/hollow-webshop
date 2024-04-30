@@ -3,11 +3,11 @@ import ShopContainer from "./ShopContainer";
 import AdminHeader from "./AdminHeader";
 import React, { useState, useEffect } from "react";
 import AddItemForm from "./AddItemForm.jsx";
-import FilterContainer from "./FilterContainer.jsx";
 import { parallaxEffect } from "../data/parallaxEffect.js";
 
 export default function AdminPage() {
     const [showButtons, setShowButtons] = useState(true);
+    const [showAdd, setShowAdd] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", parallaxEffect);
@@ -25,8 +25,7 @@ export default function AdminPage() {
             </section>
             <div id="admin">
                 <AddItemForm />
-                <FilterContainer />
-                <ShopContainer showButtons={showButtons} />
+                <ShopContainer showButtons={showButtons} showAdd={showAdd}/>
             </div>
         </section>
     );

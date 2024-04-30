@@ -2,11 +2,11 @@ import { create } from "zustand";
 
 const useStore = create((set) => ({
     kites: [],
-    isHamburgerOpen: false, 
     setKites: (newKites) =>
-        set((state) => ({
-            kites: newKites,
-        })),
+    set((state) => ({
+        kites: newKites,
+    })),
+    isHamburgerOpen: false, 
     toggleHamburger: () =>
         set((state) => ({
             isHamburgerOpen: !state.isHamburgerOpen,
