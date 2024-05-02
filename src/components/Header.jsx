@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../assets/logotypes/logotype.svg";
 import "../stylesheets/header.css";
 import { useStore } from "../data/store.js"; 
+import { Link, Outlet } from "react-router-dom";
+
 
 
 export default function Header() {
@@ -22,11 +24,12 @@ export default function Header() {
                         <i className="fa-solid fa-address-card navIcon"></i>About us
                     </a>
                 </li> */}
-                <li>
-                    <a href="">
+               <Link to="/Cart" >
+                 <li>
+                    
                         <i className="fa-solid fa-cart-shopping navIcon"></i>Cart
-                    </a>
-                </li>
+                    
+                </li></Link>
             </ul>
            <div onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></div>
         </nav>

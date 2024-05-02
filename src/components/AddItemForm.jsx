@@ -101,7 +101,7 @@ export default function EditForm() {
                         <img src={standardImg} alt="Test Image" />
                     )}
                     {name ? <p>{name}</p> : <p>Title</p>}
-                    {description ? <p>{description}</p> : <p>Description</p>}
+                    {description ? <p style={{textWrap: "wrap"}}>{description}</p> : <p>Description</p>}
                     {price ? <p>{price} £ </p> : <p>Price</p>}
                 </div>
             </div>

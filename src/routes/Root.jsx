@@ -25,6 +25,9 @@ const Root = () => {
                 <Link to="/Login" className="nav-link-style">
                     <p>Login </p>
                 </Link>
+                <Link to="/Cart" className="nav-link-style">
+                    <p>Cart </p>
+                </Link>
             </footer>
         </div>
     );

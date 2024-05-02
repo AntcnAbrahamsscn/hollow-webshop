@@ -5,7 +5,8 @@ import { getKites, deleteKite, updateKite } from "../data/crud.js";
 export default function ItemContainer({ kite, showButtons, showAdd }) {
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
-    const [editedKite, setEditedKite] = useState(kite); // Initialize with current kite data
+    const [editedKite, setEditedKite] = useState(kite);
+    const {addToCart} = useStore()
     const setKites = useStore((state) => state.setKites);
 
     const handleDelete = async () => {
@@ -34,6 +35,7 @@ export default function ItemContainer({ kite, showButtons, showAdd }) {
         setEditedKite({ ...editedKite, [name]: value });
     };
 
+// TODO: LÄGG DENNA I EGEN KOMPONENT
     const editForm = (
         <div
             style={{
@@ -78,12 +80,13 @@ export default function ItemContainer({ kite, showButtons, showAdd }) {
                     name="description"
                     value={editedKite.description}
                     onChange={handleInputChange}
+                    maxLength={100}
                 ></input>
             </div>
             <button onClick={handleSave}>Save</button>
         </div>
     );
-
+// LÄGG DENNA I EGEN KOMPONENT
     const itemInfo = (
         <div>
             {" "}
@@ -108,7 +111,7 @@ export default function ItemContainer({ kite, showButtons, showAdd }) {
                         </div>
                     )}
                     {showAdd && (
-                        <button className="addButton description">
+                        <button onClick={() => addToCart(kite)} className="addButton description">
                             <i className="fa-solid fa-plus"></i>{" "}
                         </button>
                     )}
