@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore/lite";
+import { collection, getDocs, addDoc, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
 import { db } from "./firestore.js";
 
 const collectionName = "kites";
@@ -20,6 +20,11 @@ async function deleteKite(key) {
     await deleteDoc(docRef)
 }
 
+async function updateKite(kite) {
+    const docRef = doc(collectionRef, kite.key);
+    await setDoc(docRef, kite);
+}
+
 
 function withKey(doc) {
     let o = doc.data();
@@ -27,4 +32,4 @@ function withKey(doc) {
     return o;
 }
 
-export { getKites, addKite, deleteKite };
+export { getKites, addKite, deleteKite, updateKite };

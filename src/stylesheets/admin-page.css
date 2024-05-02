@@ -23,6 +23,9 @@
     body {
         font-size: 18px;
     }
+    #admin {
+        padding: 60px 100px;
+    }
 }
 
 /* Desktop styles */

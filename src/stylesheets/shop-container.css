@@ -14,21 +14,22 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: relative;
     box-sizing: border-box;
+    transition: transform 0.3s;
 }
 
 .itemContainer img {
     width: 100%;
     object-fit: cover;
-    height: 250px;
+    height: 220px;
     border-radius: 2px;
 }
-.buttonContainer {
+/* .buttonContainer {
     grid-column: span 8;
-}
+} */
 
 .itemContainer {
     overflow: hidden;
-    max-height: 400px;
+    max-height: 350px;
     position: relative;
     transition: transform 0.3s;
 }
@@ -43,11 +44,14 @@
     height: 100%;
     overflow-wrap: break-word;
     gap: 0.2em;
+    transition: transform 0.3s;
 }
 
+/* TODO: CLEAN UP THIS CODE!! */
 .itemContainer:hover .itemContent {
     transform: translateY(calc(-98% + 90px));
     cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .itemContainer:hover {
@@ -58,22 +62,33 @@
     display: none;
     opacity: 0;
     transition: opacity 0.3s;
+    transition: transform 0.3s;
 }
 
 .itemContainer:hover .itemContent .description {
     display: block;
     opacity: 1;
+    transition: transform 0.3s;
 }
 
-.buttonContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5em;
-    position: absolute;
-    top: 340px;
-    right: 1em;
-    z-index: 100;
+.itemContent .buttons {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition: transform 0.3s;
+    margin-left: 0.5em;
 }
+
+.itemContainer:hover .itemContent .buttons {
+    display: flex;
+    opacity: 1;
+    transition: transform 0.3s;
+}
+
+.buttonContainer button {
+    margin-left: 0.5em;
+}
+
 /* Small tablets styles */
 @media screen and (min-width: 620px) {
     .itemContainer {
@@ -82,12 +97,15 @@
 }
 
 /* Large tablets and laptop styles */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1200px) {
     .itemContainer {
-        grid-column: span 2;
+        grid-column: span 4;
     }
 }
 
 /* Desktop styles */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
+    .itemContainer {
+        grid-column: span 2;
+    }
 }
