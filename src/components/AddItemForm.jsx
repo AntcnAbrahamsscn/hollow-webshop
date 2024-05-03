@@ -2,7 +2,7 @@ import { useStore } from "../data/store.js";
 import { addKite, getKites } from "../data/crud.js";
 import React, { useState } from "react";
 import "../stylesheets/add-item-form.css";
-import standardImg from "../assets/backgrounds/background-white-kite.png";
+import standardImg from "/background-white-kite.png";
 
 export default function EditForm() {
     const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +21,8 @@ export default function EditForm() {
         }
 
         setIsLoading(true);
+
+
 
         const newKite = {
             name: name,
