@@ -1,7 +1,7 @@
-import { useStore } from "../data/store.js";
-import { addKite, getKites } from "../data/crud.js";
+import { useStore } from "../../data/store.js";
+import { addKite, getKites } from "../../data/crud.js";
 import React, { useState } from "react";
-import "../stylesheets/add-item-form.css";
+import "./add-item-form.css";
 import standardImg from "/background-white-kite.png";
 
 export default function EditForm() {
@@ -90,7 +90,7 @@ export default function EditForm() {
                     />
                     <p>Test img: src\assets\kites\test-img.png</p>
                 </div>
-                <button disabled={isLoading} type="submit">
+                <button className="primaryButton" disabled={isLoading} type="submit">
                     {isLoading ? "Loading..." : "Add item to list"}
                 </button>
             </div>

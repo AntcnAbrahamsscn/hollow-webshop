@@ -1,5 +1,5 @@
 import React from "react";
-import { useStore } from "../data/store.js"; 
+import { useStore } from "../../data/store.js"; 
 
 export default function HamburgerOverlay({ isOpen }) { 
     const toggleHamburger = useStore((state) => state.toggleHamburger);

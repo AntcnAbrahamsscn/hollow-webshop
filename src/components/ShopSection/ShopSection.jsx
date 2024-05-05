@@ -1,6 +1,6 @@
 import React from "react";
-import "../stylesheets/shop-section.css";
-import ShopContainer from "./ShopContainer";
+import "./shop-section.css";
+import ShopContainer from "../ShopContainer/ShopContainer";
 
 export default function ShopSection({showButtons, showAdd}) {
     

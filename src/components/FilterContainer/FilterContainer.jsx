@@ -36,7 +36,7 @@ export default function FilterContainer({ kites, setFilteredKites }) {
                 onChange={handleSearch}
             />
             <div>
-                <button onClick={handleSort}>Sorted by {sortBy === "price" ? "price" : "name"}</button>
+                <button className="primaryButton" onClick={handleSort}>Sorted by {sortBy === "price" ? "price" : "name"}</button>
             </div>
         </div>
     );

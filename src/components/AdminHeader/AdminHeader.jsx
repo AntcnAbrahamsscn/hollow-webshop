@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../assets/logotypes/logotype.svg";
+import logo from "../../assets/logotypes/logotype.svg";
 import { Link } from "react-router-dom";
 
-import "../stylesheets/admin-header.css"
+import "./admin-header.css"
 
 
 export default function AdminHeader() {

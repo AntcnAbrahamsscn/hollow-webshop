@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useStore } from "../data/store.js";
-import { getKites, deleteKite, updateKite } from "../data/crud.js";
+import { useStore } from "../../data/store.js";
+import { getKites, deleteKite, updateKite } from "../../data/crud.js";
 
 export default function ItemContainer({ kite, showButtons, showAdd }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -83,7 +83,7 @@ export default function ItemContainer({ kite, showButtons, showAdd }) {
                     maxLength={100}
                 ></input>
             </div>
-            <button onClick={handleSave}>Save</button>
+            <button className="primaryButton" onClick={handleSave}>Save</button>
         </div>
     );
 // LÄGG DENNA I EGEN KOMPONENT
@@ -102,16 +102,16 @@ export default function ItemContainer({ kite, showButtons, showAdd }) {
                     </div>
                     {showButtons && (
                         <div className="buttonContainer buttons">
-                            <button onClick={handleEdit}>
+                            <button className="primaryButton" onClick={handleEdit}>
                                 <i className="fa-regular fa-pen-to-square"></i>{" "}
                             </button>
-                            <button disabled={isLoading} onClick={handleDelete}>
+                            <button className="primaryButton" disabled={isLoading} onClick={handleDelete}>
                                 <i className="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     )}
                     {showAdd && (
-                        <button onClick={() => addToCart(kite)} className="addButton description">
+                        <button onClick={() => addToCart(kite)} className="addButton description primaryButton">
                             <i className="fa-solid fa-plus"></i>{" "}
                         </button>
                     )}

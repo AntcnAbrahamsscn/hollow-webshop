@@ -1,9 +1,9 @@
-import "../stylesheets/admin-page.css";
-import ShopContainer from "./ShopContainer";
-import AdminHeader from "./AdminHeader";
+import "./admin-page.css";
+import ShopContainer from "../ShopContainer/ShopContainer.jsx";
+import AdminHeader from "../AdminHeader/AdminHeader.jsx";
 import React, { useState, useEffect } from "react";
-import AddItemForm from "./AddItemForm.jsx";
-import { parallaxEffect } from "../data/parallaxEffect.js";
+import AddItemForm from "../AddItemForm/AddItemForm.jsx";
+import { parallaxEffect } from "../../data/parallaxEffect.js";
 
 export default function AdminPage() {
     const [showButtons, setShowButtons] = useState(true);

@@ -45,7 +45,7 @@ input {
     padding: 0.5em;
 }
 
-button {
+.primaryButton {
     background-color: var(--color-background);
     border-radius: 3px;
     border-style: none;
@@ -70,7 +70,7 @@ button {
     -webkit-user-select: none;
 }
 
-button:hover,
-button:focus {
+.primaryButton:hover,
+.primaryButton:focus {
     background-color: #9ab5da;
 }

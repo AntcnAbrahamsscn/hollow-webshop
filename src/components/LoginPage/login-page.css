@@ -1,0 +1,53 @@
+#loginPage {
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    background-image: url("/vertical-5-boards.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.loginContainer {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 3px;
+    background-color: rgba(242, 244, 255, 1);
+}
+.loginForm {
+    padding: 1em;
+}
+
+.inputContainer {
+    margin-top: 2em;
+    position: relative;
+}
+
+.inputContainer i {
+    position: absolute;
+    right: 0.2em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputContainer input {
+    height: 100%;
+}
+
+.buttonFormContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonFormContainer p {
+    font-size: 0.7em;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 1em; */
+    padding: 1em;
+}

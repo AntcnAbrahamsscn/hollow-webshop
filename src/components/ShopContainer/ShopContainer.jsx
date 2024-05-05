@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ItemContainer from "./ItemContainer";
-import { useStore } from "../data/store";
-import { getKites } from "../data/crud";
-import "../stylesheets/shop-container.css";
-import FilterContainer from "./FilterContainer";
+import ItemContainer from "../ItemContainer/ItemContainer.jsx";
+import { useStore } from "../../data/store.js";
+import { getKites } from "../../data/crud.js";
+import "./shop-container.css";
+import FilterContainer from "../FilterContainer/FilterContainer.jsx";
 
 export default function ShopContainer({ showButtons, showAdd }) {
     const { kites, setKites } = useStore();

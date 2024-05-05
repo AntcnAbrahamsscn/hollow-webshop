@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../stylesheets/first-page.css";
-import LandingSection from "./LandingSection";
-import HamburgerOverlay from "./HamburgerOverlay"
-import ShopSection from "./ShopSection";
-import { useStore } from "../data/store.js"; 
+import "./first-page.css";
+import LandingSection from "../LandingSection/LandingSection.jsx";
+import HamburgerOverlay from "../HamburgerOverlay/HamburgerOverlay.jsx"
+import ShopSection from "../ShopSection/ShopSection.jsx";
+import { useStore } from "../../data/store.js"; 
+import { Link } from "react-router-dom";
+
 
 export default function FirstPage() {
     // TODO: Lägg till showButtons/ showAdd till zustand, fråga först David.
@@ -17,6 +19,7 @@ export default function FirstPage() {
             <HamburgerOverlay isOpen={isHamburgerOpen} />
             <LandingSection />
             <ShopSection showButtons={showButtons} showAdd={showAdd} />
+           <div className="adminLink"> <Link   to="/Login">Admin login</Link></div>
         </div>
     );
 }

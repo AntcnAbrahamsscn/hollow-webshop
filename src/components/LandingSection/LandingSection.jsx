@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Header from "./Header";
-import "../stylesheets/landing-section.css"
-import { parallaxEffect } from "../data/parallaxEffect";
+import Header from "../Header/Header";
+import "./landing-section.css"
+import { parallaxEffect } from "../../data/parallaxEffect";
 
 
 export default function LandingPage() {

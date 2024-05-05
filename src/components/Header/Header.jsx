@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../assets/logotypes/logotype.svg";
-import "../stylesheets/header.css";
-import { useStore } from "../data/store.js"; 
-import { Link, Outlet } from "react-router-dom";
+import logo from "../../assets/logotypes/logotype.svg";
+import "./header.css";
+import { useStore } from "../../data/store.js"; 
+import { Link } from "react-router-dom";
 
 
 
@@ -19,11 +19,6 @@ export default function Header() {
                         <i className="fa-solid fa-lines-leaning navIcon"></i>Kites
                     </a>
                 </li>
-                {/* <li>
-                    <a href="">
-                        <i className="fa-solid fa-address-card navIcon"></i>About us
-                    </a>
-                </li> */}
                <Link to="/Cart" >
                  <li>
                     

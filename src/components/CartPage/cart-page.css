@@ -41,12 +41,6 @@ h2 {
     padding: 1em;
 }
 
-.checkoutContainer button {
-    background-color: rgb(81, 248, 81);
-}
-.checkoutContainer button:hover {
-    background-color: rgb(130, 247, 130);
-}
 /* Small tablets styles */
 @media screen and (min-width: 620px) {
     .bars-icon {

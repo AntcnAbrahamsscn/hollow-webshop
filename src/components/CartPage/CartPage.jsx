@@ -1,6 +1,6 @@
-import { useStore } from "../data/store";
-import Header from "./Header";
-import "../stylesheets/cart-page.css";
+import { useStore } from "../../data/store";
+import Header from "../Header/Header.jsx";
+import "./cart-page.css";
 
 function Cart() {
     const { cart, deleteFromCart, addToCart } = useStore();
@@ -87,7 +87,7 @@ function Cart() {
                 })}
                 <div className="checkoutContainer">
                     <h3>Total sum: {totalSum} £ </h3>
-                    <button>Check out</button>
+                    <button className="primaryButton">Check out</button>
                 </div>
             </div>
         </div>

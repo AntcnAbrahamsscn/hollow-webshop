@@ -2,14 +2,26 @@
     box-sizing: border-box;
 }
 
+.adminLink a {
+    padding-left: 1em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
 /* Small tablets styles */
 @media screen and (min-width: 620px) {
 }
 
 /* Large tablets and laptop styles */
 @media screen and (min-width: 960px) {
+    .adminLink a {
+        padding-left: 100px;
+    }
 }
 
 /* Desktop styles */
 @media screen and (min-width: 1200px) {
+    .adminLink a {
+        padding-left: 200px;
+    }
 }
