@@ -10,19 +10,22 @@ export default function EditForm() {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [img, setImg] = useState(standardImg);
+    const [invalidFields, setInvalidFields] = useState([]);
     const setKites = useStore((state) => state.setKites);
 
     // Add function
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        // Check if required fields are filled
         if (!name || !price) {
+            setInvalidFields(["name", "price"]);
             return;
+        } else {
+            setInvalidFields([]);
         }
 
         setIsLoading(true);
-
-
 
         const newKite = {
             name: name,
@@ -50,7 +53,7 @@ export default function EditForm() {
         <form onSubmit={handleSubmit} className="addItemFormContainer">
             <div className="inputContainer">
                 <h3>Add new item</h3>
-                <div className="inputColumn">
+                <div className={`inputColumn ${invalidFields.includes("name") ? "invalid" : ""}`}>
                     <label>Name of the product</label>
                     <input
                         type="text"
@@ -68,7 +71,7 @@ export default function EditForm() {
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
-                <div className="inputColumn">
+                <div className={`inputColumn ${invalidFields.includes("price") ? "invalid" : ""}`}>
                     <label>Price of the product</label>
                     <input
                         type="text"
@@ -95,7 +98,7 @@ export default function EditForm() {
                 </button>
             </div>
             <div className="formDivider"></div>
-            <div  id="itemPreview">
+            <div id="itemPreview">
                 <div className="itemContainer">
                     {img ? (
                         <img src={img} alt={name} />
@@ -103,7 +106,7 @@ export default function EditForm() {
                         <img src={standardImg} alt="Test Image" />
                     )}
                     {name ? <p>{name}</p> : <p>Title</p>}
-                    {description ? <p style={{textWrap: "wrap"}}>{description}</p> : <p>Description</p>}
+                    {description ? <p>{description}</p> : <p>Description</p>}
                     {price ? <p>{price} £ </p> : <p>Price</p>}
                 </div>
             </div>

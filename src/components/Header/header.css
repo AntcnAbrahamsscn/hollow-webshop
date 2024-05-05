@@ -11,7 +11,7 @@
 }
 
 nav ul {
-    display: none;
+    display: flex;
     gap: 1em;
 }
 
@@ -30,16 +30,8 @@ a {
     font-size: 0.8em;
 }
 
-.bars-icon {
-    display: block;
-}
-
 /* Small tablets styles */
 @media screen and (min-width: 620px) {
-    .bars-icon {
-        display: none;
-    }
-
     .firstPageNav {
         justify-content: flex-start;
     }

@@ -7,10 +7,10 @@ const useStore = create((set) => ({
             kites: newKites,
         })),
     isHamburgerOpen: false,
-    toggleHamburger: () =>
-        set((state) => ({
-            isHamburgerOpen: !state.isHamburgerOpen,
-        })),
+    // toggleHamburger: () =>
+    //     set((state) => ({
+    //         isHamburgerOpen: !state.isHamburgerOpen,
+    //     })),
     cart: [],
     addToCart: (kite, quantity = 1) => {
         set((state) => ({

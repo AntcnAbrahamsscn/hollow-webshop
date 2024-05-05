@@ -2,28 +2,47 @@ import React, { useState, useEffect } from "react";
 
 export default function FilterContainer({ kites, setFilteredKites }) {
     const [searchQuery, setSearchQuery] = useState("");
-    const [sortBy, setSortBy] = useState("price"); // Add state for sorting method
+    const [sortBy, setSortBy] = useState("price");
+    const [sortDirection, setSortDirection] = useState("asc");
 
     useEffect(() => {
         let sortedKites = [...kites];
         if (sortBy === "price") {
-            sortedKites.sort((a, b) => a.price - b.price);
+            sortedKites.sort((a, b) => {
+                if (sortDirection === "asc") {
+                    return a.price - b.price;
+                } else {
+                    return b.price - a.price;
+                }
+            });
         } else if (sortBy === "name") {
-            sortedKites.sort((a, b) => a.name.localeCompare(b.name));
+            sortedKites.sort((a, b) => {
+                if (sortDirection === "asc") {
+                    return a.name.localeCompare(b.name);
+                } else {
+                    return b.name.localeCompare(a.name);
+                }
+            });
         }
 
         sortedKites = sortedKites.filter((kite) =>
             kite.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setFilteredKites(sortedKites);
-    }, [searchQuery, kites, sortBy, setFilteredKites]);
+    }, [searchQuery, kites, sortBy, sortDirection, setFilteredKites]);
 
     const handleSearch = (event) => {
         setSearchQuery(event.target.value);
     };
 
-    const handleSort = () => {
-        setSortBy(sortBy === "price" ? "name" : "price");
+    const handleSortByName = () => {
+        setSortBy("name");
+        setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    };
+
+    const handleSortByPrice = () => {
+        setSortBy("price");
+        setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     };
 
     return (
@@ -35,8 +54,29 @@ export default function FilterContainer({ kites, setFilteredKites }) {
                 value={searchQuery}
                 onChange={handleSearch}
             />
-            <div>
-                <button className="primaryButton" onClick={handleSort}>Sorted by {sortBy === "price" ? "price" : "name"}</button>
+            <div className="sortButtonContainer">
+                <button className="primaryButton" onClick={handleSortByName}>
+                    {sortBy === "name" ? (
+                        sortDirection === "asc" ? (
+                            <i class="fa-solid fa-a"></i>
+                        ) : (
+                            <i class="fa-solid fa-z"></i>
+                        )
+                    ) : (
+                        <i class="fa-solid fa-a"></i>
+                    )}
+                </button>
+                <button className="primaryButton" onClick={handleSortByPrice}>
+                    {sortBy === "price" ? (
+                        sortDirection === "asc" ? (
+                            <i className="fa-solid fa-down-long"></i>
+                        ) : (
+                            <i className="fa-solid fa-up-long"></i>
+                        )
+                    ) : (
+                        <i className="fa-solid fa-down-long"></i>
+                    )}
+                </button>
             </div>
         </div>
     );

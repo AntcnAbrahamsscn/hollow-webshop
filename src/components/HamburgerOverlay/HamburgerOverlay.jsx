@@ -1,13 +1,14 @@
 import React from "react";
-import { useStore } from "../../data/store.js"; 
+import { useStore } from "../../data/store.js";
+import { Link } from "react-router-dom";
 
-export default function HamburgerOverlay({ isOpen }) { 
+export default function HamburgerOverlay({ isOpen }) {
     const toggleHamburger = useStore((state) => state.toggleHamburger);
 
-    if (!isOpen) return null; 
+    if (!isOpen) return null;
 
     const handleCloseOverlay = () => {
-        toggleHamburger(); 
+        toggleHamburger();
     };
     return (
         <section
@@ -19,7 +20,7 @@ export default function HamburgerOverlay({ isOpen }) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                zIndex: 999, 
+                zIndex: 999,
                 position: "fixed",
                 top: 0,
                 right: 0,
@@ -27,31 +28,26 @@ export default function HamburgerOverlay({ isOpen }) {
                 left: 0,
             }}
         >
-           <button onClick={handleCloseOverlay}>
+            <button onClick={handleCloseOverlay}>
                 <i
-                    style={{ position: "absolute", right: "1em", top: "1em"}}
-                    className="fa-regular fa-circle-xmark" 
+                    style={{ position: "absolute", right: "1em", top: "1em" }}
+                    className="fa-regular fa-circle-xmark"
                 ></i>
             </button>
             <ul>
-                <li>
-                    <a href="">
-                        <i className="fa-solid fa-lines-leaning navIcon"></i>
-                        Kites
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i className="fa-solid fa-address-card navIcon"></i>
-                        About us
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+            <Link to="/" >
+                 <li>
+                    
+                        <i className="fa-solid fa-cart-shopping navIcon"></i>Kites
+                    
+                </li></Link>
+            
+                <Link to="/Cart">
+                    <li>
                         <i className="fa-solid fa-cart-shopping navIcon"></i>
                         Cart
-                    </a>
-                </li>
+                    </li>
+                </Link>
             </ul>
         </section>
     );

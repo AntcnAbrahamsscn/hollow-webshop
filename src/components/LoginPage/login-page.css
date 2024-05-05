@@ -10,17 +10,22 @@
 
 .loginContainer {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 400px;
+    width: 95%;
+    height: 300px;
     margin: 0 auto;
     border-radius: 3px;
     background-color: rgba(242, 244, 255, 1);
 }
 .loginForm {
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
 }
 
 .inputContainer {
-    margin-top: 2em;
+    margin-top: 1em;
     position: relative;
 }
 
@@ -48,6 +53,23 @@
 .formHeader {
     display: flex;
     justify-content: space-between;
-    /* margin-bottom: 1em; */
     padding: 1em;
+}
+
+.errorMessage {
+    height: 3em;
+}
+/* Small tablets styles */
+@media screen and (min-width: 620px) {
+    .loginContainer {
+        width: 400px;
+    }
+}
+
+/* Large tablets and laptop styles */
+@media screen and (min-width: 1200px) {
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1400px) {
 }

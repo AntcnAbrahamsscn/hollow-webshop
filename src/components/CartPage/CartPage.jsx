@@ -58,12 +58,12 @@ function Cart() {
                                             borderRadius: "50px",
                                         }}
                                     >
-                                        <button
+                                        <button className="primaryButton"
                                             onClick={() =>
                                                 handleDelete(item.id)
                                             }
                                         >
-                                            <i class="fa-solid fa-minus"></i>{" "}
+                                            <i className="fa-solid fa-minus"></i>{" "}
                                         </button>
                                         <p
                                             style={{
@@ -72,10 +72,10 @@ function Cart() {
                                         >
                                             {item.count}
                                         </p>
-                                        <button
+                                        <button className="primaryButton"
                                             onClick={() => addToCart(item, 1)}
                                         >
-                                            <i class="fa-solid fa-plus"></i>{" "}
+                                            <i className="fa-solid fa-plus"></i>{" "}
                                         </button>
                                     </div>
                                 </div>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Header() {
-    const isHamburgerOpen = useStore((state) => state.isHamburgerOpen);
+    // const isHamburgerOpen = useStore((state) => state.isHamburgerOpen);
     const toggleHamburger = useStore((state) => state.toggleHamburger);
 
     return (
@@ -26,7 +26,7 @@ export default function Header() {
                     
                 </li></Link>
             </ul>
-           <div onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></div>
+           {/* <div onClick={toggleHamburger} > <div className="bars-icon hide"><i className="fa-solid fa-bars"></i></div></div> */}
         </nav>
     );
 }

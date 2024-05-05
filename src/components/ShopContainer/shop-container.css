@@ -45,7 +45,7 @@
 
 /* TODO: CLEAN UP THIS CODE!! */
 .itemContainer:hover .itemContent {
-    transform: translateY(calc(-100% + 10px));
+    transform: translateY(calc(-100% + 90px));
     cursor: pointer;
 }
 
@@ -74,6 +74,11 @@
     margin-left: 0.5em;
 }
 
+.sortButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
 /* Small tablets styles */
 @media screen and (min-width: 620px) {
     .itemContainer {
